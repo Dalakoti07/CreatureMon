@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import com.raywenderlich.android.creaturemon.model.AttributeType
 
 
-class CreatureContract {
+interface CreatureContract {
 
     //to be implemented by presenter, and view can call these methods on presenter
     interface Presenter{
@@ -15,12 +15,18 @@ class CreatureContract {
         fun drawableSelected(drawable:Int)
 
         fun isDrawableSelected(): Boolean
+
+        fun saveCreature()
     }
 
     interface View{
         fun showHitPoints(hitPoints:String)
 
         fun showAvatarDrawable(@DrawableRes resourceId: Int)
+
+        fun showCreatureSaved()
+
+        fun showCreatureSaveError()
     }
 
 }
